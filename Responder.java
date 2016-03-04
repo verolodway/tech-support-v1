@@ -14,8 +14,7 @@ public class Responder
     private Random rnd;
     //ArrayList que nos permitirá escoger entre varias respuestas.
     private ArrayList<String> respuesta;
-    //String que nos genera la respuesta.
-    private String resp;
+
     
     /**
      * Construct a Responder - nothing to do
@@ -37,6 +36,6 @@ public class Responder
      */
     public String generateResponse()
     {
-        return resp = respuesta.get(rnd.nextInt(respuesta.size()));
+        return respuesta.get(rnd.nextInt(respuesta.size()));
     }
 }
