@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.Arrays;
 /**
  * This class implements a technical support system. It is the top
  * level class in this project. The support system communicates via
@@ -15,7 +17,6 @@ public class SupportSystem
 {
     private InputReader reader;
     private Responder responder;
-    
     /**
      * Creates a technical support system.
      */
@@ -33,17 +34,14 @@ public class SupportSystem
     public void start()
     {
         boolean finished = false;
-
         printWelcome();
-
         while(!finished) {
             String input = reader.getInput();
-
             if(input.trim().toLowerCase().equals("bye")) {
                 finished = true;
             }
             else {
-                String response = responder.generateResponse();
+                String response = responder.generateResponse(input.toLowerCase());
                 System.out.println(response);
             }
         }
